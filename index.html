@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Key Detection</title>
+    <link rel="icon" href="https://fav.farm/%F0%9F%94%A0"></link>
     <script type="text/javascript" src="./cornify.js"></script>
 </head>
 <body>
+    <h2 style="text-align: center;">Press any keyboard keys</h2>
+    
     <script>
+        const arr = [];
+        const line = "haha";
+
+        function keyPress(e){
+            arr.push(e.key);
+            arr.splice(-line.length - 1, arr.length - line.length);
+            if(arr.join("").includes(line)){
+                console.log("DING DING");
+                cornify_add()
+            }
+            
+            console.log(arr)
+        }
+
+        window.addEventListener("keyup", keyPress)
         
     </script>
 </body>
